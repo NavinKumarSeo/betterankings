@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome — let's get started | BetteRankings</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230EA5E9'/%3E%3Cstop offset='1' stop-color='%237C3AED'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='800'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    .ty-hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 24px;
+      background:
+        radial-gradient(ellipse 800px 400px at 50% 0%, rgba(14,165,233,0.12), transparent 60%),
+        radial-gradient(ellipse 600px 300px at 80% 50%, rgba(124,58,237,0.10), transparent 60%),
+        linear-gradient(180deg, #fafaf9 0%, #ffffff 100%);
+    }
+    .ty-card {
+      max-width: 720px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      box-shadow: var(--shadow-xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ty-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--color-grad);
+    }
+    .ty-check {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--color-grad);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 32px rgba(14,165,233,0.4);
+    }
+    .ty-card h1 { font-size: 36px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.1; }
+    .ty-card .lead { font-size: 18px; color: var(--color-text-muted); margin-bottom: 0; }
+    .ty-next {
+      margin-top: 40px;
+      padding: 28px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      text-align: left;
+    }
+    .ty-next h3 {
+      font-size: 14px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent);
+    }
+    .ty-next ol { padding-left: 20px; counter-reset: steps; list-style: none; padding-left: 0; }
+    .ty-next li {
+      counter-increment: steps;
+      margin-bottom: 16px;
+      padding-left: 40px;
+      position: relative;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+    .ty-next li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0; top: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--color-grad);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .ty-cta {
+      margin-top: 32px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-mark">B</span>
+        <span class="logo-text">BetteRankings</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="ty-hero">
+    <div class="ty-card">
+      <div class="ty-check" aria-hidden="true">✓</div>
+      <h1>Payment received — let's get to work.</h1>
+      <p class="lead">Your PayPal receipt is on its way. I'll personally email you within one business day to kick off your project.</p>
+
+      <div class="ty-next">
+        <h3>What happens next</h3>
+        <ol>
+          <li><strong>You'll receive a kickoff email</strong> within 24 hours, asking for your brand name, top 3 competitors, primary buyer persona, and any context that'll sharpen the audit.</li>
+          <li><strong>I begin the work the same day</strong> the kickoff form comes back. For Snapshots, you'll have your report in 48 hours. For Audits, in 7 business days. For Sprints, week one starts with a strategy call.</li>
+          <li><strong>You'll get a private Live Scorecard URL</strong> — your always-on dashboard with the four AI Visibility Scores, recommendations, and progress tracking. Updated weekly during Sprints. Share with your CEO any time.</li>
+        </ol>
+      </div>
+
+      <p style="margin-top: 32px; font-size: 14px; color: var(--color-text-muted);">
+        Questions before we begin? Email <a href="mailto:hello@betterankings.com" class="link-arrow">hello@betterankings.com</a>
+      </p>
+
+      <a href="/" class="btn btn-ghost ty-cta">← Back to BetteRankings</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-copy" style="border:none; padding:0; text-align:center;">© 2026 BetteRankings · betterankings.com</p>
+    </div>
+  </footer>
+</body>
+</html>
