@@ -639,20 +639,51 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   gap: 20px;
   align-items: stretch;
 }
-.pricing-grid.pricing-4col {
-  grid-template-columns: repeat(4, 1fr);
-}
-@media (max-width: 1080px) {
-  .pricing-grid.pricing-4col { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .pricing-grid.pricing-4col { grid-template-columns: 1fr; }
+.pricing-grid.pricing-3col { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 940px) {
+  .pricing-grid.pricing-3col { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
 }
 /* keep buy buttons aligned across cards despite variable-length copy */
 .price-outcome { min-height: 72px; }
-.price-guarantee { min-height: 58px; display: flex; align-items: center; }
+.price-guarantee { min-height: 56px; display: flex; align-items: center; }
 .paypal-trust { min-height: 34px; display: flex; align-items: center; justify-content: center; text-align: center; }
 .price-fineprint { min-height: 34px; }
+/* roomier, more premium one-time-tier cards */
+.price-card { padding: 38px 30px; }
+.price-amount { font-size: 46px; }
+.price-features li { font-size: 14px; padding: 9px 0 9px 26px; }
+.price-features li::before { top: 15px; }
+.price-features li::after { top: 10px; }
+@media (min-width: 941px) {
+  .price-card-featured { transform: scale(1.04); z-index: 2; }
+  .price-card-featured:hover { transform: scale(1.04) translateY(-3px); }
+}
+/* Recurring partnership — premium dark "always-on" banner */
+.partner-banner {
+  margin-top: 28px; display: grid; grid-template-columns: 1fr auto; gap: 44px; align-items: center;
+  padding: 38px 44px; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #0a0a0a, #14141f); color: #fff;
+  border: 1px solid var(--color-border-dark); position: relative; overflow: hidden;
+}
+.partner-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at right, rgba(14,165,233,0.20), transparent 62%); pointer-events: none; }
+.partner-banner > * { position: relative; z-index: 1; }
+.pb-info .price-tier { color: var(--color-accent); }
+.pb-info .price-name { color: #fff; font-size: 24px; margin-bottom: 10px; }
+.pb-outcome { color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.6; max-width: 580px; margin-bottom: 18px; }
+.pb-features { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 7px 22px; }
+.pb-features li { position: relative; padding-left: 22px; font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+.pb-features li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--color-success); font-weight: 700; }
+.pb-buy { text-align: center; min-width: 210px; }
+.pb-price { margin-bottom: 14px; line-height: 1; }
+.pb-price .price-amount { color: #fff; font-size: 40px; }
+.pb-price .price-unit { color: rgba(255,255,255,0.6); }
+.pb-fine { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 12px; line-height: 1.4; }
+@media (max-width: 860px) {
+  .partner-banner { grid-template-columns: 1fr; gap: 26px; text-align: center; padding: 32px 24px; }
+  .pb-features { grid-template-columns: 1fr 1fr; text-align: left; max-width: 440px; margin: 0 auto; }
+  .pb-outcome { margin-left: auto; margin-right: auto; }
+  .pb-buy { min-width: 0; }
+}
 .trust-badges svg, .announce-bar svg { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; opacity: 0.85; }
 .check-list { list-style: none; margin: 18px 0 0; padding: 0; }
 .check-list li { position: relative; padding: 8px 0 8px 30px; font-size: 16px; color: var(--color-text, #1a2233); line-height: 1.55; }

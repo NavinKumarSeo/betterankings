@@ -89,7 +89,7 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.metric-card, .step, .price-card, .testimonial, .for-card').forEach(function(el, i) {
+    document.querySelectorAll('.metric-card, .step, .testimonial, .for-card').forEach(function(el, i) {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.5s ease ' + (i * 0.05) + 's, transform 0.5s ease ' + (i * 0.05) + 's';
