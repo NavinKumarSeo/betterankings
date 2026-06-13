@@ -687,6 +687,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 8px; border: 3px solid #ffffff; }
 ::-webkit-scrollbar-thumb:hover { background: #b9b5b1; }
+
+/* === Related-reading link cards === */
+.link-card { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+.link-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--color-accent); }
+.link-card .lc-kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 8px; }
+.link-card h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; color: var(--color-text); }
+.link-card p { font-size: 14px; line-height: 1.55; color: var(--color-text-muted); margin: 0; }
+.link-card .lc-arrow { color: var(--color-accent); font-weight: 600; }
 .price-card {
   padding: 32px 24px;
   background: white;
