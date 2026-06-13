@@ -651,6 +651,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* keep buy buttons aligned across cards despite variable-length copy */
 .price-outcome { min-height: 68px; }
 .price-guarantee { min-height: 50px; }
+.trust-badges svg, .announce-bar svg { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; opacity: 0.85; }
 .price-card {
   padding: 32px 24px;
   background: white;
