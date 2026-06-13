@@ -87,7 +87,7 @@
       ctx.fillStyle = col; ctx.fill();
       if (pt.t >= 1) {
         if (pt.leg === 0) { pt.leg = 1; pt.t = 0; }
-        else { particles.splice(p, 1); pulse = 1; if (scoreTarget < 74) scoreTarget += 1.3; }
+        else { particles.splice(p, 1); pulse = 1; }
       }
     }
 
@@ -118,7 +118,8 @@
     ctx.fillText('B', cx, cy + 1);
     ctx.textBaseline = 'alphabetic';
 
-    // score readout
+    // score readout — climbs steadily toward a healthy "cited" level as the map runs
+    if (scoreTarget < 74) scoreTarget += 0.1;
     score += (scoreTarget - score) * 0.06;
     if (scoreEl) scoreEl.textContent = Math.round(score);
   }
