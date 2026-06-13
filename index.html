@@ -180,26 +180,12 @@
         </div>
       </div>
 
-      <!-- CSS-only "report preview" card for visual interest -->
-      <div class="hero-card" aria-hidden="true">
-        <div class="hc-header">
-          <div class="hc-title">Your AI Visibility Score</div>
-          <div class="hc-badge">SAMPLE</div>
-        </div>
-        <div class="hc-score">
-          <div class="hc-score-num"><span class="counter" data-target="28">28</span><small>/100</small></div>
-          <div class="hc-score-label">Lagging — large opportunity</div>
-        </div>
-        <div class="hc-bars">
-          <div class="hc-bar"><span class="hc-bar-label">Visibility Rate</span><span class="hc-bar-track"><span class="hc-bar-fill" style="--w:31%"></span></span><span class="hc-bar-val">31%</span></div>
-          <div class="hc-bar"><span class="hc-bar-label">Position Score</span><span class="hc-bar-track"><span class="hc-bar-fill" style="--w:42%"></span></span><span class="hc-bar-val">0.42</span></div>
-          <div class="hc-bar"><span class="hc-bar-label">Citation Share</span><span class="hc-bar-track"><span class="hc-bar-fill" style="--w:8%"></span></span><span class="hc-bar-val">8%</span></div>
-          <div class="hc-bar"><span class="hc-bar-label">Share of Voice</span><span class="hc-bar-track"><span class="hc-bar-fill" style="--w:14%"></span></span><span class="hc-bar-val">14%</span></div>
-        </div>
-        <div class="hc-foot">
-          <span class="hc-tag">3 wins identified</span>
-          <span class="hc-tag">90-day plan included</span>
-        </div>
+      <!-- Live animated "AI citation network": engines citing your brand, score climbing -->
+      <div class="hero-visual" role="img" aria-label="Live animation showing ChatGPT, Perplexity, Google AI and Gemini citing your brand as your AI visibility score climbs.">
+        <canvas class="geo-network" id="geoNetwork"></canvas>
+        <span class="hv-tag hv-tag-tl">Live AI citation map</span>
+        <div class="hv-score"><span class="hv-score-num" id="hvScore">0</span><span class="hv-score-unit">/100 AI visibility</span></div>
+        <span class="hv-tag hv-tag-br">ChatGPT · Perplexity · Google AI · Gemini</span>
       </div>
     </div>
   </section>
@@ -833,5 +819,6 @@
   </a>
 
   <script src="script.js"></script>
+  <script src="geo-hero.js" defer></script>
 </body>
 </html>
