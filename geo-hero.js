@@ -22,7 +22,7 @@
     { name: 'Gemini', a: Math.PI }
   ];
   var sources = [], particles = [];
-  var score = 0, scoreTarget = 0, pulse = 0, spin = 0;
+  var score = 24, scoreTarget = 24, pulse = 0, spin = 0;
   var scoreEl = document.getElementById('hvScore');
 
   function resize() {
