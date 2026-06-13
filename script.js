@@ -110,18 +110,34 @@
     });
   });
 
-  // 5. Mobile nav toggle accessibility
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  if (navToggle && nav) {
-    navToggle.setAttribute('aria-controls', 'primary-nav');
-    nav.setAttribute('id', 'primary-nav');
+  // 5. Mobile nav toggle — works on every page; injects the hamburger if a page lacks one
+  var header = document.querySelector('.site-header');
+  var nav = header && header.querySelector('.nav');
+  if (nav) {
+    var navToggle = header.querySelector('.nav-toggle');
+    if (!navToggle) {
+      navToggle = document.createElement('button');
+      navToggle.className = 'nav-toggle';
+      navToggle.setAttribute('aria-label', 'Open menu');
+      navToggle.setAttribute('aria-expanded', 'false');
+      for (var s = 0; s < 3; s++) navToggle.appendChild(document.createElement('span'));
+      nav.parentNode.insertBefore(navToggle, nav.nextSibling);
+    }
+    if (!nav.id) nav.id = 'primary-nav';
+    navToggle.setAttribute('aria-controls', nav.id);
+    var setNav = function(open) {
+      nav.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    navToggle.addEventListener('click', function() { setNav(!nav.classList.contains('open')); });
+    nav.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { setNav(false); }); });
     document.addEventListener('click', function(e) {
-      if (!nav.contains(e.target) && !navToggle.contains(e.target) && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !navToggle.contains(e.target)) setNav(false);
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) setNav(false);
     });
   }
 
