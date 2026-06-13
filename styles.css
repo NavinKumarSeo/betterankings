@@ -642,6 +642,15 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .pricing-grid.pricing-4col {
   grid-template-columns: repeat(4, 1fr);
 }
+@media (max-width: 1080px) {
+  .pricing-grid.pricing-4col { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .pricing-grid.pricing-4col { grid-template-columns: 1fr; }
+}
+/* keep buy buttons aligned across cards despite variable-length copy */
+.price-outcome { min-height: 68px; }
+.price-guarantee { min-height: 50px; }
 .price-card {
   padding: 32px 24px;
   background: white;
